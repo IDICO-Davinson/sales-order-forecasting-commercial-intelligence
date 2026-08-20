@@ -1,0 +1,49 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "sales_intelligence"
+version = "0.0.1"
+description = "Forecasting de Sales Orders e inteligencia comercial para apoyar la toma de decisiones en IDICO."
+authors = [
+  { name = "Davinson Arteaga" },
+]
+
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    
+]
+dependencies = [
+    "ipython",
+    "jupyterlab",
+    "loguru",
+    "matplotlib",
+    "mkdocs",
+    "notebook",
+    "numpy",
+    "pandas",
+    "pip",
+    "pytest",
+    "python-dotenv",
+    "ruff",
+    "scikit-learn",
+    "tqdm",
+    "typer",
+]
+requires-python = "~=3.10.0"
+
+
+[tool.ruff]
+line-length = 99
+src = ["sales_intelligence"]
+include = ["pyproject.toml", "sales_intelligence/**/*.py"]
+
+[tool.ruff.lint]
+extend-select = ["I"]  # Add import sorting
+
+[tool.ruff.lint.isort]
+known-first-party = ["sales_intelligence"]
+force-sort-within-sections = true
+
